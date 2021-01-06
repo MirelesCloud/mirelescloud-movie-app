@@ -4,8 +4,6 @@ import { GET_MOVIE } from './query'
 import { Movie } from '../../Types'
 import { Container, Row, Column, Image, List, ListItem } from '../../Styles'
 
-
-
 const MovieDetail: React.FC<Movie> = ({match}: any) => {
   const { data, loading, error } = useQuery(GET_MOVIE, {
     variables: {
@@ -13,13 +11,16 @@ const MovieDetail: React.FC<Movie> = ({match}: any) => {
     }
   })
 
+  
+
   if (loading) {
     return <div>Loading...</div>
   }
 
-  if (error) {
+  if (error || !data) {
     return <div>Sorry, there are no details for this movie.</div>
   }
+  console.log(data)
   
   const { 
     title, 
@@ -49,10 +50,7 @@ const MovieDetail: React.FC<Movie> = ({match}: any) => {
           </List>
         </Column>
       </Row>
-      
-
     </Container>
-  
   )
 }
 

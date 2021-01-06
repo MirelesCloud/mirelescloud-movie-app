@@ -6,6 +6,7 @@ import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 const Discover: React.FC<Movies> = (data) => {
+  console.log(data)
   return (
     <Container>
       <h1>Disover</h1>
@@ -13,7 +14,7 @@ const Discover: React.FC<Movies> = (data) => {
       {!!data.movies &&
           data.movies!.map((movie) => 
           !! movie && (
-              <Link key={movie.id} to={`info/${movie.id}`}>
+              <Link key={movie.id} to={`/${movie.id}`}>
                 <div>
                   <CardImage src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt={movie.title}/>
                 </div>

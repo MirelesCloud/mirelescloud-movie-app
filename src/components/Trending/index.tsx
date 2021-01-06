@@ -7,7 +7,6 @@ import { Movies } from '../../Types'
 
 const HomeContainer = () => {
   const { data, loading, error } = useQuery<Movies>(QUERY_TRENDING_MOVIES)
-
   if (loading) {
     return <div>Loading...</div>
   }

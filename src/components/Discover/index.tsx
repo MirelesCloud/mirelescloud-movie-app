@@ -13,6 +13,7 @@ const DiscoverContainer = () => {
     if (error) {
       return <div>Error !!!!</div>
     }
+    console.log(data)
     return React.createElement<Movies>(Discover, data)
 }
 

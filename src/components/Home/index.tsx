@@ -1,18 +1,15 @@
 import React from 'react'
 import Trending from '../Trending'
 import Discover from '../Discover'
-import Search from '../Search'
+//import Search from '../Search'
 import { MainContainer } from '../../Styles'
 
-
-
-const HomeContainer = () => {
+const Home = () => {
  return (
    <MainContainer>
-    <Discover/>
-    <Search/>
+     <Trending/>
    </MainContainer>
  )
 }
 
-export default HomeContainer
+export default Home
