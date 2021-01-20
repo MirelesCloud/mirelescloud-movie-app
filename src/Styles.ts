@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-image: linear-gradient(to right, #141414, #202121);
     color: #fff;
+    font-family: 'Montserrat', 'Cabin', helvetica, arial, sans-serif;
   }
 
   p {
@@ -70,62 +71,12 @@ export const NavRight = styled('div')`
     font-weight: 300;
 `
 
-export const Container = styled.div`
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: 10px;
-`
+
 
 export const Title = styled.div`
   font-size: 4.4rem;
   text-align: center;
   margin-bottom: 20px;
-`
-
-export const Input = styled.input`
-  font-size: 1.6rem;
-  padding: 0.5rem 2rem;
-  line-height: 2.8rem;
-  border-radius: 20px;
-  border: 1px solid #fff;
-  margin-bottom: 1rem;
-`
-
-export const Form = styled.form`
-  display: grid;
-
-  @media (min-width: 786px) {
-    grid-template-columns: auto 1fr auto;
-    grid-gap: 1rem;
-    align-center: center;
-
-    ${Input} {
-      margin-bottom: 0;
-    }
-  }
-
-`
-
-export const Label = styled.label`
-  font-size: 1.2rem;
-  margin-bottom: 0.2rem;
-  text-transform: uppercase;
-`
-
-
-
-export const Button = styled.button`
-  background-color: #fff;
-  color: #000;
-  padding: 1rem 2rem;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  font-size: 1.4rem;
-  transition: background-color 250ms;
-
-  &:hover {
-    background-color: green;
-  }
 `
 
 export const MainContainer = styled('div')`
@@ -187,8 +138,143 @@ export const CardImage = styled.img`
   
 `
 
+export const List = styled.ul`
+  list-style-type: none;
+  font-size: 1.5rem;
+`
+export const ListItem = styled.li`
+`
+
+//Search Bar
+export const InputMain = styled.div`
+  background: purple;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  &:before, &:after {
+    content: '';
+    display: block;	
+    height: 1px;
+    left: 50%;
+    margin: 0 0 0 -400px;
+    position: absolute;
+    width: 800px;
+  }
+`
+
+export const Form = styled.form`
+  overflow: auto;
+  background: #111;
+  background: linear-gradient(#1b1b1b, #111);
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px #272727;
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+
+`
+const glow = keyframes`
+0% {
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+  }	
+  100% {
+    border-color: #6f6;
+    box-shadow: 0 0 20px rgba(0,255,0,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+  }
+`
+
+export const Input = styled.input`
+  background: #222;	
+  background: linear-gradient(#333, #222);	
+  border: 1px solid #444;
+  border-radius: 5px 0 0 5px;
+  box-shadow: 0 2px 0 #000;
+  color: #888;
+  display: block;
+  float: left;
+  font-family: 'Montserrat', 'Cabin', helvetica, arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  height: 40px;
+  margin: 0;
+  padding: 0 10px;
+  text-shadow: 0 -1px 0 #000;
+  width: 600px;
+  line-height: 40px;
+
+  &:focus {
+    animation: ${glow} 800ms ease-out infinite alternate;
+    background: #222922;
+    background: linear-gradient(#333933, #222922);
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+    color: #efe;
+    outline: none;
+  }
+`
+
+export const Button = styled.button`
+  background: #222;
+  background: linear-gradient(#333, #222);
+  box-sizing: border-box;
+  border: 1px solid #444;
+  border-left-color: #000;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 2px 0 #000;
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 20px;
+  font-weight: 400;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-shadow: 0 -1px 0 #000;
+  width: 90px;
+
+  &:hover, &focus {
+    background: #292929;
+    background: linear-gradient(#393939, #292929);
+    color: #5f5;
+    outline: none;
+  }
+
+  &:active {
+    background: #292929;
+    background: linear-gradient(#393939, #292929);
+    box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+    top: 1px;
+  }
+`
+
+//Movie Detail Page
+export const Container = styled.div`
+  margin: 0 160px 0 auto;
+  max-width: 1000px;
+  padding: 10px;
+`
+export const SideNav = styled.div`
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 20px;
+`
+
 export const Row = styled.div`
   display: flex;
+  margin-left: 160px;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
@@ -210,11 +296,4 @@ export const Column = styled.div`
     width: 100%;
     flex: 1;
   }
-`
-
-export const List = styled.ul`
-  list-style-type: none;
-  font-size: 1.5rem;
-`
-export const ListItem = styled.li`
 `

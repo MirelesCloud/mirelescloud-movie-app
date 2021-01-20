@@ -1,7 +1,7 @@
 import React from 'react'
-import { Movie } from '../../Types'
+import { Movie } from '../../../Types'
 import { useHistory } from 'react-router-dom'
-import { Container, Row, Column, Image, List, ListItem } from '../../Styles'
+import { Container, Row, Column, Image, List, ListItem } from '../../../Styles'
 import SideBar from './SideBar'
 
 const MovieDetail: React.FC<Movie> = ({

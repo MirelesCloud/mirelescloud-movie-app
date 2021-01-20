@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/client'
 import { GET_MOVIE } from './query'
-import { Movie } from '../../Types'
+import { Movie } from '../../../Types'
 import MovieDetail from './MovieDetail'
 
 const Index: React.FC<Movie> = ({match}: any) => {

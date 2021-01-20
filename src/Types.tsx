@@ -2,8 +2,11 @@ export interface Movie {
   id: number;
   title: string;
   release_date: string;
-  backdrop_path: string;
   poster_path: string;
+  overview: string,
+  tagline: string,
+  vote_average: number,
+  runtime: number
 }
 
 export interface Movies {
